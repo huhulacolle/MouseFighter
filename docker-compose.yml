@@ -1,0 +1,6 @@
+services:
+  mousefighter.server:
+    image: ${DOCKER_REGISTRY-}mousefighterserver
+    build:
+      context: .
+      dockerfile: MouseFighter.Server/Dockerfile

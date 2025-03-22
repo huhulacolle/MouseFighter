@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "None",
+      "composeLaunchServiceName": "mousefighter.server",
+      "serviceActions": {
+        "mousefighter.server": "StartDebugging"
+      }
+    }
+  }
+}
