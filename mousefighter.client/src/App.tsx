@@ -1,3 +1,3 @@
 export default function App() {
-  return <div>coucou</div>;
+  return <div className="text-yellow-300">coucou</div>;
 }
