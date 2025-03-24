@@ -13,3 +13,15 @@ jobs:
     steps:
     - name: Copy repository
       uses: actions/checkout@v4
+
+
+    - name: deploy webapp
+      uses: appleboy/ssh-action@v1.2.2
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          git -C MouseFighter pull
+          docker compose -f MouseFighter/docker-compose.yml up --build -d
