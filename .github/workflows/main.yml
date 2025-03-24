@@ -1,0 +1,15 @@
+name: main
+
+on:
+  push:
+    branches:
+    - main
+  
+jobs:        
+    
+  main:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Copy repository
+      uses: actions/checkout@v4
