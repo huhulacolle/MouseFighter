@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, MouseEvent } from "react";
 import * as signalR from "@microsoft/signalr";
 import { getSession, setSession } from "../utils/Store";
 import ConnectionState from "../enum/ConnectionState";
-import Segment from "./interfaces/Segment";
-import Position from "./interfaces/Position";
+import Segment from "../interfaces/Segment";
+import Position from "../interfaces/Position";
 
 export default function Home() {
   const MIN_SEGMENT_LENGTH = 6;
@@ -214,7 +214,7 @@ export default function Home() {
   if (!Play) {
     return (
       <div className="h-screen flex flex-col gap-5 items-center justify-center">
-        <div className="absolute top-0 left-0 p-4 opacity-50">
+        <div className="absolute top-0 left-0 p-4">
           {Player2 ? "Joueur 2" : "Joueur 1"}
         </div>
         {waitingMessage()}
@@ -225,7 +225,7 @@ export default function Home() {
               const url = `${window.location.href}join?roomId=${id}`;
               navigator.clipboard.writeText(url);
             }}
-            className="border rounded-2xl p-2 cursor-pointer"
+            className="border rounded-2xl p-2 cursor-pointer hover:bg-slate-200 active:bg-slate-400"
           >
             Copier le lien
           </button>
