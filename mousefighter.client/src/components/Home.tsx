@@ -178,9 +178,21 @@ export default function Home() {
         y2: currentPos.y,
       };
 
-      if (checkCollision(newSegment, segmentsBlue.current)) {
+      const OtherPlayerCollision = checkCollision(
+        newSegment,
+        segmentsBlue.current
+      );
+      const SamePlayerCollition = checkCollision(
+        newSegment,
+        segmentsRed.current
+      );
+
+      if (OtherPlayerCollision || SamePlayerCollition) {
         await ConnectionSignalR.invoke("SendLost");
         setMessage("tu as perdu !");
+        if (SamePlayerCollition) {
+          setMessage((m) => m + " Tu a touché ton propre trait");
+        }
         clearCanvas();
         await ConnectionSignalR.invoke("SendReset");
         return;
