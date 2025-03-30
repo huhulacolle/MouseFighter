@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Copy repository
-      uses: actions/checkout@v4
-
 
     - name: deploy webapp
       uses: appleboy/ssh-action@v1.2.2
