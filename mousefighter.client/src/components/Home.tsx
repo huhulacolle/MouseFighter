@@ -4,6 +4,7 @@ import { getSession, setSession } from "../utils/Store";
 import ConnectionState from "../enum/ConnectionState";
 import Segment from "../interfaces/Segment";
 import Position from "../interfaces/Position";
+import logo from "..//assets/Mousefighter.svg";
 
 export default function Home() {
   const MIN_SEGMENT_LENGTH = 6;
@@ -117,7 +118,7 @@ export default function Home() {
     ctx.beginPath();
     ctx.moveTo(start.x, start.y);
     ctx.lineTo(end.x, end.y);
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 10;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
     ctx.strokeStyle = color;
@@ -229,6 +230,9 @@ export default function Home() {
         <div className="absolute top-0 left-0 p-4">
           {Player2 ? "Joueur 2" : "Joueur 1"}
         </div>
+        l'original !!! pas un plagiat du hibou
+        <img src={logo} alt="Logo" className="w-96" />
+
         {waitingMessage()}
         {ConnectionStatus == ConnectionState.WAITING_PLAYER ? (
           <button
