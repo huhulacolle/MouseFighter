@@ -230,7 +230,6 @@ export default function Home() {
         <div className="absolute top-0 left-0 p-4">
           {Player2 ? "Joueur 2" : "Joueur 1"}
         </div>
-        l'original !!! pas un plagiat du hibou
         <img src={logo} alt="Logo" className="w-96" />
 
         {waitingMessage()}
